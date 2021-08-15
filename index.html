@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Random Hex Background Generator</title>
+    <style>
+      body {
+        background: linear-gradient(to right, #5b6b40, #d164f3);
+      }
+
+      #main {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      #container {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: 95vh;
+        padding: 0 15px;
+      }
+
+      #hex-text {
+        text-align: center;
+      }
+
+      #hex-text h1 {
+        text-transform: uppercase;
+      }
+
+      #hex-text h2 {
+        margin-top: 15%;
+        text-transform: lowercase;
+      }
+
+      #submit {
+        background: black;
+        color: white;
+        width: auto;
+        padding: 20px;
+        text-transform: uppercase;
+      }
+
+      #submit:hover {
+        background: white;
+        color: black;
+      }
+    </style>
+    <script>
+      function mudaBackground() {
+        var randomColor1 = Math.floor(Math.random() * 16777215).toString(16)
+        var randomColor2 = Math.floor(Math.random() * 16777215).toString(16)
+        document.getElementById('manipula').style.background =
+          'linear-gradient(to right, #' +
+          randomColor1 +
+          ',#' +
+          randomColor2 +
+          ')'
+        document.getElementById('text-bg').innerHTML =
+          'background:linear-gradient(to right, #' +
+          randomColor1 +
+          ', #' +
+          randomColor2 +
+          ')'
+      }
+    </script>
+  </head>
+
+  <body id="manipula">
+    <div id="main">
+      <div id="container">
+        <div id="hex-text">
+          <h1>
+            Click the button to generate a random hex number for the background
+          </h1>
+          <h2 id="text-bg">
+            background: linear-gradient(to right, #5B6B40, #D164F3);
+          </h2>
+          <button
+            id="submit"
+            value="Muda background"
+            onclick="mudaBackground()"
+          >
+            Change Background Here
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
